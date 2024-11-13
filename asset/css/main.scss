@@ -1,0 +1,2092 @@
+
+.navbar_icon{
+    color: var(--text_color);
+    font-size: 20px;
+    text-decoration: none;
+    border: none;
+    background-color: var(--white-color);
+    cursor:pointer;
+    :hover{
+        opacity: 0.8;
+
+    }
+}
+
+.app_wrap{
+    width: 100%;
+    .header{
+        // background-color: aqua;
+        height: 60px;
+        margin-top: 0px;
+        border-bottom: solid 2px var(--main_color);
+    }
+    // navbar
+    .header__navbar{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+        .header__navbar-list-left{
+            width: 200px;
+            list-style: none;
+            display: flex;
+            padding-left: 0px;
+            .header__navbar--menu{
+                .header__navbar-menu-icon{
+                    @extend .navbar_icon;
+                }
+            }
+            .header__navbar--logo{
+                img{
+                    width: 70%;
+                    margin: -5px 5px;
+                }
+                
+            }
+            :hover{
+                opacity: 0.8;
+                cursor:pointer;
+            }
+            
+           
+        }
+        
+        .header__navbar-list-right{
+            list-style: none;
+            display: flex;
+            .header__navbar--bel{
+                display: inline-block;
+                position: relative;
+                .header__navbar-bell-icon{
+                    @extend .navbar_icon;
+                    margin-right: 20px;
+                }
+                .header__navbar--bel-noti{
+                    display:none;
+                    position: absolute;
+                    right: 0;
+                    top:150%;
+                    width: 200px;
+                    padding: 5px;
+                    z-index: 1;
+                    background-color: var(--white_color);
+                    border-radius: 10px;
+                    .header__navbar--bel-noti_select{
+                        list-style: none;
+                        align-items: center;
+                        padding: 5px;
+                        .header__navbar--bel-noti_select_link{
+                            text-decoration: none;
+                            color: var(--text_color);
+                            font-size: 15px;
+                        }
+                        :hover{
+                            cursor: pointer;
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+            .header__navbar--create{
+                display: inline-block;
+                position: relative;
+                .header__navbar-create-icon{
+                    @extend .navbar_icon;
+                    margin-right: 20px;
+                }
+                .header__navbar--create-noti{
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    top:150%;
+                    width: 130px;
+                    padding: 5px;
+                    z-index: 1;
+                    background-color: var(--white_color);
+                    border-radius: 10px;
+                    .header__navbar--create-noti_select{
+                        list-style: none;
+                        align-items: center;
+                        padding: 5px;
+                        .header__navbar--create-noti_select_link{
+                            text-decoration: none;
+                            color: var(--text_color);
+                            font-size: 15px;
+                        }
+                        :hover{
+                            cursor: pointer;
+                            opacity: 0.8;   
+                        }
+                    }
+                }
+            }
+            .header__navbar--user{
+                display: inline-block;
+                position: relative;
+                .header__navbar-user-icon{
+                    @extend .navbar_icon;
+                    margin-right: 20px;
+                    
+                }
+                
+                .header__navbar--user-noti{
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    top:150%;
+                    width: 150px;
+                    padding: 5px;
+                    z-index: 1;
+                    background-color: var(--white_color);
+                    border-radius: 10px;
+                    .header__navbar--user-noti_select{
+                        list-style: none;
+                        align-items: center;
+                        padding: 5px;
+                        .header__navbar--user-noti_select_link{
+                            text-decoration: none;
+                            color: var(--text_color);
+                            font-size: 15px;
+                        }
+                        :hover{
+                            cursor: pointer;
+                            opacity: 0.8;
+                            
+                        }
+                    }
+                    
+                    
+                }
+                
+            }
+
+        }
+        
+
+    }
+    // Cả app
+    .container{
+        background-color: var(--main_color);
+        .grid{
+            .grid_row{
+                // Danh mục
+                .grid__column_2{
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                    background-color: white;
+                    margin-left: -12px;
+                    .menu_list{
+                        padding-left: 15px;
+                        list-style: none;
+                        
+                        @mixin menu_button{
+                            border: none;
+                            font-size: 20px;
+                            background-color: var(--white-color);
+                            width: 100%;
+                            text-align: left;
+                            height: 40px;
+                            &:hover {
+                                background-color: var(--gray_color  );
+                                cursor: pointer;
+                            } 
+                            
+                        }
+                        
+                        
+                        
+                        .menu-main{
+                            display:flex;
+                            justify-content: center;
+                            align-items: center;
+                            .menu-main__icon{
+                                @include menu_button;
+                            }
+                            
+                            
+                        }
+                        .menu-student{
+                            .menu-student__icon{
+                                @include menu_button;
+                            } 
+                            
+                            .menu-student__item{
+                                display:none;
+                                list-style: none;
+                                padding: 10px 3px;
+                                white-space: nowrap; 
+                                .menu-student__item_1, .menu-student__item_2{
+                                    text-decoration: none;
+                                    color: var(--black_color);
+                                    // background-color: aqua;
+                                    font-size: 13px;
+                                    display:flex;
+                                    margin: 5px;
+                                    align-items: center;
+                                    justify-content: center;
+                                    img{
+                                        width: 20%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        margin: 5px;
+                                        object-fit: cover;
+                                    }
+                        
+                                    p{
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+                                }
+
+                                :hover{
+                                    background-color: var(--gray_color);
+                                    cursor: pointer;
+                                    color: var(--black_color)
+                                }
+                            }
+                        }
+                        .menu-teacher{
+                            .menu-teacher__icon{
+                                @include menu_button;
+                            } 
+                            .menu-teacher__item{
+                                display:none;
+                                list-style: none;
+                                padding: 10px 3px;
+                                white-space: nowrap; 
+                                .menu-teacher__item_1, .menu-teacher__item_2{
+                                    text-decoration: none;
+                                    color: var(--black_color);
+                                    font-size: 15px;
+                                    display:flex;
+                                    margin: 5px;
+                                    align-items: center;
+                                    justify-content: center;
+                                    img{
+                                        width: 20%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        margin: 5px;
+                                        object-fit: cover;
+                                    }
+                                    p{
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+                                }
+                                :hover{
+                                    background-color: var(--gray_color);
+                                    cursor: pointer;
+                                    color: var(--black_color);
+                                }
+                            }
+                        }
+                        .menu-setting{
+                            .menu-setting__icon{
+                                @include menu_button;
+                            }
+                        }
+                    }
+                }
+                // Nội dung
+                .grid__column_10{
+                    background:url('../img/background.png');
+                    background-size: cover;
+                    // thanh lọc nội dung
+                    .home-filter{
+                        width: 100%;
+                        background-color: var(--white_color);
+                        position: sticky;
+                        border-radius: 2px;
+                        
+                        .home-filter__btn{
+                            background-color: transparent;
+                            margin-left: 10px;
+                            border: none;
+                            border-radius: 2px;
+                            width: 16.6667%;
+                            height: 40px;
+                            font-size: 20px;
+                            margin-left: 0;
+                            outline: none;
+                            cursor: pointer;
+                            align-items: center;
+                            justify-content: center;
+                            display: inline-flex;
+                        }
+                        :hover{
+                            background-color: var(--gray_color);
+                        }
+                        :focus::placeholder {
+                            opacity: 0; 
+                        }
+                        
+                    }
+                    // Các nội dung chính 
+                    .main{
+                        .main__class{
+                            margin-top: 12px;
+                            border-radius: 10px;
+                            background-color: var(--white_color);
+
+                            
+                            .main__class--name{
+                                width: 100%;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
+                                padding: 10px 20px;
+                                display: flex;
+                                h1{
+                                    width: 95%;
+                                    font-size: 15px;
+                                    color: var(--white_color);
+                                    font-weight: 500;
+                                    -webkit-line-clamp: 1;
+                                    -webkit-box-orient: vertical;
+                                    overflow: hidden;
+                                    display: -webkit-box;
+                                }
+                                :hover{
+                                    cursor: pointer;
+                                    color: var(--gray_color);
+                                }
+                                .main__class--name-icon{
+                                    font-size: 15px;
+                                    padding-top: 10px;
+                                    color: var(--white_color);  
+                                    position: relative;
+                                    // background-color: black;
+                                    :hover{
+                                        color:var(--gray_color);
+                                        cursor: pointer;
+                                    }
+                                    
+                       
+                                    ul{
+                                        
+                                        display: none;
+                                        right: -10px;
+                                        top: 30px;
+                                        width: 170px;
+                                        height: fit-content;
+                                        padding: 5px;
+                                        background-color: var(--white_color);
+                                        border-radius: 10px;
+                                        position: absolute;
+                                        list-style: none;
+                                        
+                                        .main__class--name-icon-option{
+                                            font-size: 15px;
+                                            padding: 2px;
+                                            .main__class--name-icon-option_link{
+                                                text-decoration: none;
+                                                color: var(--text_color);
+                                                width: 100%;
+                                                display: inline-block;
+                                                
+                                            }
+                                            
+                                            
+                                            :hover{
+                                                cursor: pointer;
+                                                opacity: 0.8;
+                                            }
+                                        }
+                                        
+                     
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                            .main__class-content{
+                                height: 80px;
+                                display: flex;
+                                text-align: center;
+                                justify-content: center;
+                                .main__class--teacher{
+                                    font-size: 11px;
+                                    width: 60%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center; 
+                                    font-weight: 700;
+                                }
+
+                                .main__class--img{
+                                    width: 40%;
+                                    text-align: center;
+                                    display:block;
+
+                                    img{
+                                        width: 50%;
+                                        border-radius: 50%;
+                                        margin-top: -20px;
+                                    }
+                                }
+                            }
+                            
+                            
+                        }
+                    }
+                    .submit-homework__wrap{
+                        // background-color: rebeccapurple;
+                        display: flex;
+                        margin-top: 16px;
+                        .submit-homework__left{
+                            width: 70%;
+                            border-radius: 10px;
+                            margin-right: 16px;
+                            padding: 10px;
+                            background-color: white;
+                            .submit-homework__left--title{
+                                display: flex;
+                                justify-content: center;
+                                .submit-homework__left--title-icon{
+                                    padding:10px;
+                                    width: 10%;
+                                    text-align: center;
+                                    font-size: 40px;
+                                    color: var(--text_color);
+                                }
+                                .submit-homework__left--title--content{
+                                    font-size: 13px;
+                                    // background-color: #979a9a;
+                                    text-align: left;
+                                    color: var(--text_color);
+                                    line-height: 30px;
+                                    width: 100%;
+                                    h1{
+                                        -webkit-line-clamp: 1;
+                                        -webkit-box-orient: vertical;
+                                        overflow: hidden;
+                                        display: -webkit-box;
+                                    }
+                                }
+                            }
+                            .submit-homework__left--time{
+                                font-size: 13px;
+                                padding-left: 10px;
+                                padding-top: 0px;
+
+                            }
+                            .submit-homework__left--cmt {
+                                font-size: 13px;
+                                padding-left: 10px;
+                                padding-top: 0px;
+                            }
+                            .submit-homework__left--content{
+                                padding: 10px;
+                                border-radius: 10px;
+                                // background-color: var(--main_color);
+                                font-size: 15px;
+                            }
+                            .submit-homework__left--score{
+                                padding-left: 10px;
+                                font-size: 15px;
+                            }
+                            .submit-homework__left--comment{
+                                font-size: 15px;
+                                padding-left: 10px;
+                                .submit-homework__left--comment-input{
+                                    width: 100%;
+                                    height: 50px;
+                                    overflow: scroll;
+                                    background-color: none;
+                                }
+                            }
+
+                        }
+                        .submit-homework__right{
+                            border-radius: 10px;
+                            width: 30%;
+                            height: 200px;
+                            background-color: var(--white_color);
+                            padding:  10px 30px;
+                            .submit-homework__right--title{
+                                display: flex;
+                                h1{
+                                    font-size: 25px;
+                                    width: 70%;
+                                }
+                                .submit-homework__right--status{
+                                    font-size: 15px;
+                                    color: rgb(7, 133, 243);
+                                    width: 30%;
+
+                                    
+                                    
+                                }
+                            }
+                            .submit-homework__right__file{
+                                font-size: 15px;
+                                padding: 10px 0 ;
+
+                            }
+                            
+
+                        }
+                        
+                    }
+                    .btn {
+                        margin: 10px;
+                    }
+                    .see-doc__wrap{
+                        background-color: var(--white_color);
+                        width: 100%;
+                        margin-top: 16px;
+                        border-radius: 10px;
+                        padding: 20px;
+                        
+                        .see-doc__title{
+                            display: flex;
+                            justify-content: center;
+                            
+                            .see-doc__title-icon{
+                                padding:10px;
+                                width: 10%;
+                                text-align: center;
+                                font-size: 40px;
+                                color: var(--text_color);
+                            }
+                            .see-doc__title--content{
+                                font-size: 13px;
+                                // background-color: #979a9a;
+                                text-align: left;
+                                color: var(--text_color);
+                                line-height: 30px;
+                                width: 100%;
+                                
+                                h1{
+                                    -webkit-line-clamp: 1;
+                                    -webkit-box-orient: vertical;
+                                    overflow: hidden;
+                                    display: -webkit-box;
+                                }
+                            }
+                            
+                        }
+                        .see-doc__file--wrap{
+                            .see-doc__file{
+                                background-color: var(--white_color);
+                                width: 30%;
+                                margin: 16px 30px ;
+                                border-radius: 10px;
+                                border: 1px solid var(--main_color);
+                                padding: 10px;
+                                display: flex;
+                                .see-doc__file-icon{
+                                    font-size: 20px;
+                                    padding: 10px;
+                                    
+                                }
+                                .see-doc__file--content{
+                                    -webkit-line-clamp: 1;
+                                    -webkit-box-orient: vertical;
+                                    overflow: hidden;
+                                    display: -webkit-box;
+                                    a {
+                                        font-size: 20px;
+                                        text-decoration: none;
+                                        color: var(--black_color);
+                                        line-height: 40px;
+                                        
+                                    }
+                                    :hover{
+                                        text-decoration: underline;
+                                    }
+                                    
+                                }
+                          
+                            }
+                            
+                        }
+                        
+                        
+                        .see-doc__time{
+                            font-size: 13px;
+                            margin: -10px 30px ;
+                        }
+                        .see-doc__content{
+                            margin: 0px 30px ;
+                            border-radius: 10px;
+                            // background-color: var(--main_color);
+                            font-size: 15px;
+                            
+                        }
+                    }
+                    .create-homework__wrap{
+                        display: flex;
+                        margin-top: 16px;
+                        justify-content: center;
+                        margin-top: 30px;
+                        .create-homework__left{
+                            width: 70%;
+                            border-radius: 10px;
+                            margin-right: 16px;
+                            padding: 10px;
+                            background-color: white;
+                            .create-homework__left--title{
+                                display: flex;
+                                justify-content: center;
+                                .create-homework__left--title-icon{
+                                    padding:10px;
+                                    width: 10%;
+                                    text-align: center;
+                                    font-size: 40px;
+                                    color: var(--text_color);
+                                }
+                                .create-homework__left--title--content{
+                                    font-size: 13px;
+                                    // background-color: #979a9a;
+                                    text-align: left;
+                                    color: var(--text_color);
+                                    width: 100%;
+                                    input{
+                                        font-size: 15px;
+                                        padding: 10px;
+                                        width: 100%;
+                                        height: 50px;
+                                        border-radius: 10px;
+                                        border: 1px solid var(--main_color);
+                                    }
+
+                                    
+                                    
+                                }
+                            }
+                            .create-homework__left--time{
+                                font-size: 13px;
+                                padding: 0 72px;
+                                text-align: left;
+                                color: var(--text_color);
+                                width: 50%;
+                                input{
+                                    font-size: 12px;
+                                    padding: 10px;
+                                    width: 100%;
+                                    height: 10px;
+                                    border-radius: 5px;
+                                    border: 1px solid var(--main_color);
+                                }
+
+                            }
+                            .create-homework__left--content{
+                                padding: 10px;
+                                border-radius: 10px;
+                                font-size: 15px;
+                                .create-homework__left--content-input{
+                                    width: 100%;
+                                    height: 100px;
+                                    border-radius: 10px;
+                                    border: 1px solid var(--main_color);
+                                    padding: 10px;
+                                }
+                                .create-homework__left--content--editor-toolbar-wrap{
+                                    // background-color:aqua ;
+                                    margin-top: 10px;
+                                    .create-homework__left--editor-toolbar{
+                                        // background-color:rebeccapurple ;
+                                        button{
+                                            background-color: transparent;
+                                            border: none;
+                                        }
+                                    }
+                                    .create-homework_btn{
+                                        button{
+                                            border: none;
+                                            border-radius: 10px;
+                                            width: 100px;
+                                            height: 40px;
+                                            
+                                        }
+                                        .create-homework_btn-cancel{
+                                            background-color: var(--white_color);
+                                            color: var(--text_color);
+                                        }
+                                        .create-homework_btn-create{
+                                            background-color: var(--gray_color);
+                                            color: var(--text_color);
+                                        }
+                                        :hover{
+                                            background-color: var(--main_color);
+                                            color: var(--text_color);
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            .create-homework__left--comment{
+                                font-size: 15px;
+                                padding-left: 10px;
+                                .create-homework__left--comment-input{
+                                    width: 100%;
+                                    height: 50px;
+                                    overflow: scroll;
+                                    background-color: none;
+                                }
+                            }
+
+                        }
+                        .create-homework__right{
+                            border-radius: 10px;
+                            width: 30%;
+                            background-color: var(--white_color);
+                            padding:  10px 30px;
+                           .statistical__homework{
+                            display: flex;
+                            justify-content: center;
+                            height: 100px;
+                            // background-color: aquamarine;
+                                .statistical__homework--submitted , .statistical__homework--delivered,
+                                .statistical__homework--graded{
+                                    padding: 0px 25px;
+                                    button{
+                                        
+                                        color: var(--main_color);
+                                        font-size: 30px;
+                                        background-color: transparent;
+                                        border: none;
+                                    }
+         
+
+                                }
+                               
+                           }
+                           .statistical-student__wrap{
+                                border-radius: 10px;
+                                height: fit-content;
+                                background-color: var(--main_color);
+                                padding:  10px 30px;
+                                .statistical-student--title{
+                                    h1{
+                                        font-size: 20px;
+                                    }
+                                }
+                                .statistical-student{
+                                    margin-top: 10px;
+                                    background-color: azure;
+                                    border-radius: 10px;
+                                    padding: 10px;
+                                    height: 100px;
+                                    .statistical-student__content{
+                                        display: flex;
+                                        text-align: center;
+                                        align-items: center;
+                                        
+                                        img{
+                                            width: 20%;
+                                            border-radius: 50%;
+                                        }
+                                        h1{
+                                            
+                                            width: 40%;
+                                            font-size: 12px;
+                                        }
+                                        p{
+                                            width: 40%;
+                                            font-size: 12px;
+                                        }
+                                        
+                                    }
+                                    .statistical-student__content--file{
+                                        display: flex;
+                                        width: 90%;
+                                        border-radius: 10px;
+                                        margin-top: 5px;
+                                        border: 1px solid var(--main_color);
+                                        height: 40px;
+                                        button{
+                                            width: 30%;
+                                            font-size: 30px;
+                                            background-color: transparent;
+                                            border: none;
+                                        }
+                                        p{
+                                            width: 100px;
+                                            -webkit-line-clamp: 1;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                            display: -webkit-box;
+                                        }
+                                    }
+                                }
+                           }
+                            
+
+                        }
+                        
+                    }
+                    .create-doc__wrap{
+                        display: flex;
+                        margin-top: 16px;
+                        .create-doc__left{
+                            width: 100%;
+                            border-radius: 10px;
+                            margin-right: 16px;
+                            padding: 10px;
+                            background-color: white;
+                            .create-doc__left--title{
+                                display: flex;
+                                justify-content: center;
+                                .create-doc__left--title-icon{
+                                    padding:10px;
+                                    width: 10%;
+                                    text-align: center;
+                                    font-size: 40px;
+                                    color: var(--text_color);
+                                }
+                                .create-doc__left--title--content{
+                                    font-size: 13px;
+                                    // background-color: #979a9a;
+                                    text-align: left;
+                                    color: var(--text_color);
+                                    width: 100%;
+                                    input{
+                                        font-size: 15px;
+                                        padding: 10px;
+                                        width: 100%;
+                                        height: 50px;
+                                        border-radius: 10px;
+                                        border: 1px solid var(--main_color);
+                                    }
+
+                                    
+                                    
+                                }
+                            }
+                            .create-doc__left--time{
+                                font-size: 13px;
+                                padding: 0 72px;
+                                text-align: left;
+                                color: var(--text_color);
+                                width: 50%;
+                                input{
+                                    font-size: 12px;
+                                    padding: 10px;
+                                    width: 100%;
+                                    height: 10px;
+                                    border-radius: 5px;
+                                    border: 1px solid var(--main_color);
+                                }
+
+                            }
+                            .create-doc__left--content{
+                                padding: 10px;
+                                border-radius: 10px;
+                                font-size: 15px;
+                                .create-doc__left--content-input{
+                                    width: 100%;
+                                    height: 100px;
+                                    border-radius: 10px;
+                                    border: 1px solid var(--main_color);
+                                    padding: 10px;
+                                }
+                                .create-doc__left--content--editor-toolbar-wrap{
+                                    // background-color:aqua ;
+                                    margin-top: 10px;
+                                    .create-doc__left--editor-toolbar{
+                                        // background-color:rebeccapurple ;
+                                        button{
+                                            background-color: transparent;
+                                            border: none;
+                                        }
+                                    }
+                                    .create-doc_btn{
+                                        button{
+                                            border: none;
+                                            border-radius: 10px;
+                                            width: 100px;
+                                            height: 40px;
+                                            
+                                        }
+                                        .create-doc_btn-cancel{
+                                            background-color: var(--white_color);
+                                            color: var(--text_color);
+                                        }
+                                        .create-doc_btn-create{
+                                            background-color: var(--gray_color);
+                                            color: var(--text_color);
+                                        }
+                                        :hover{
+                                            background-color: var(--main_color);
+                                            color: var(--text_color);
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            .create-doc__left--comment{
+                                font-size: 15px;
+                                padding-left: 10px;
+                                .create-doc__left--comment-input{
+                                    width: 100%;
+                                    height: 50px;
+                                    overflow: scroll;
+                                    background-color: none;
+                                }
+                            }
+
+                        }
+                        
+                        
+                    }
+                    .grades_students__wrap{
+                        display: flex;
+                        margin-top: 16px;
+                        .grades_students__left{
+                            width: 70%;
+                            border-radius: 10px;
+                            margin-right: 16px;
+                            padding: 10px;
+                            background-color: white;
+                            .grades_students__left--title{
+                                display: flex;
+                                justify-content: center;
+                                // background-color: var(--main_color);
+                                border-radius: 10px;
+                                .grades_students__left--title-icon{
+                                    padding:10px;
+                                    width: 10%;
+                                    text-align: center;
+                                    font-size: 40px;
+                                    color: var(--text_color);
+                                }
+                                .grades_students__left--title--content{
+                                    
+                                    text-align: left;
+                                    color: var(--text_color);
+                                    width: 100%;
+                                    line-height: 30px;
+                                    
+                                    h1{
+                                        -webkit-line-clamp: 1;
+                                        -webkit-box-orient: vertical;
+                                        overflow: hidden;
+                                        display: -webkit-box;
+                                    }
+
+                                    
+                                    
+                                }
+                            }
+                            .grades_students__left--time{
+                                font-size: 13px;
+                                text-align: left;
+                                color: var(--text_color);
+                                padding: 0 10px;
+
+                            }
+                            .grades_students__left--name{
+                                font-size: 12px;
+                                padding: 0 10px;
+                            }
+                            .grades_students__left--score{
+                                padding: 0 10px;
+                                input{
+                                    text-align: center;
+                                    font-size: 12px;
+                                    border-radius: 5px;
+                                    border: 1px solid var(--main_color);
+                                    height: 30px;
+                                }
+                                
+                            }
+                            .grades_students__left__file--wrap{
+                                .grades_students__left__file{
+                                    background-color: var(--white_color);
+                                    width: 30%;
+                                    margin: 10px 10px ;
+                                    border-radius: 10px;
+                                    border: 1px solid var(--main_color);
+                                    padding: 10px;
+                                    display: flex;
+                                    .grades_students__left__file-icon{
+                                        font-size: 20px;
+                                        padding: 10px;
+                                        
+                                    }
+                                    .grades_students__left__file--content{
+                                        -webkit-line-clamp: 1;
+                                        -webkit-box-orient: vertical;
+                                        overflow: hidden;
+                                        display: -webkit-box;
+                                        .type_doc{
+                                            font-size: 12px;
+                                        }
+                                        
+                                    }
+                              
+                                }
+                                :hover{
+                                    background-color: var(--main_color);
+                                    cursor: pointer;
+                                }
+                            }
+                            .grades_students__left--content{
+                                padding: 10px;
+                                border-radius: 10px;
+                                font-size: 15px;
+                                // background-color: #979a9a;
+                                
+                            }
+                            
+                            .grades_students__left--comment{
+                                font-size: 15px;
+                                padding-left: 10px;
+                                .grades_students__left--comment-input{
+                                    width: 100%;
+                                    height: 50px;
+                                    overflow: scroll;
+                                    background-color: none;
+                                }
+                            }
+
+                        }
+                        .grades_students__right{
+                            border-radius: 10px;
+                            width: 30%;
+                            background-color: var(--white_color);
+                            padding:  10px 30px;
+                           .statistical__homework{
+                            display: flex;
+                            justify-content: center;
+                            height: 100px;
+                            // background-color: aquamarine;
+                                .statistical__homework--submitted , .statistical__homework--delivered,
+                                .statistical__homework--graded{
+                                    padding: 0px 25px;
+                                    button{
+                                        
+                                        color: var(--main_color);
+                                        font-size: 30px;
+                                        background-color: transparent;
+                                        border: none;
+                                    }
+         
+
+                                }
+                               
+                           }
+                           .statistical-student__wrap{
+                                border-radius: 10px;
+                                height: fit-content;
+                                background-color: var(--main_color);
+                                padding:  10px 30px;
+                                .statistical-student--title{
+                                    h1{
+                                        font-size: 20px;
+                                    }
+                                }
+                                .statistical-student{
+                                    margin-top: 10px;
+                                    background-color: azure;
+                                    border-radius: 10px;
+                                    padding: 10px;
+                                    .statistical-student__content{
+                                        display: flex;
+                                        text-align: center;
+                                        align-items: center;
+                                        
+                                        img{
+                                            width: 20%;
+                                            border-radius: 50%;
+                                        }
+                                        h1{
+                                            
+                                            width: 40%;
+                                            font-size: 12px;
+                                        }
+                                        p{
+                                            width: 40%;
+                                            font-size: 12px;
+                                        }
+                                        
+                                    }
+                                    .statistical-student__content--file{
+                                        display: flex;
+                                        width: 90%;
+                                        border-radius: 10px;
+                                        margin-top: 5px;
+                                        border: 1px solid var(--main_color);
+                                        height: 40px;
+                                        button{
+                                            width: 30%;
+                                            font-size: 30px;
+                                            background-color: transparent;
+                                            border: none;
+                                        }
+                                        p{
+                                            width: 100px;
+                                            -webkit-line-clamp: 1;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                            display: -webkit-box;
+                                        }
+                                    }
+                                }
+                           }
+                            
+
+                        }
+                        
+                    }
+                    .people_wrap{
+                        background-color: white;
+                        margin-top: 16px;
+                        .people__teacher{
+                            padding: 20px;
+                            .people__teacher--list{
+                                .people__teacher--detail{
+                                    display: flex;
+                                    padding: 10px;
+                                    align-items: center;
+                                    margin-top: 16px;
+                                    border: 1px solid var(--main_color);
+                                    border-radius: 10px;
+                                    img{
+                                        width: 5%;
+                                        border-radius: 50%;
+                                        
+
+                                    }
+                                    .people__teacher--infor{
+                                        width: 85%;
+                                        color: var(--text_color);
+                                        margin-left: 30px;
+                                        h1{
+                                            font-size: 20px;
+                                        }
+                                        p{
+                                            font-size: 15px;
+                                        }
+                                        
+                                        
+
+                                    }
+                                    .people__teacher-icon{
+                                        
+                                        font-size: 20px;
+                                        padding-top: 10px;
+                                        color: var(--text_color);
+                                        position: relative;
+                                        // background-color: black;
+                                        :hover{
+                                            
+                                            cursor: pointer;
+                                        }
+                                        ul{
+                                            right: -10px;
+                                            top: 30px;
+                                            width: 300px;
+                                            height: fit-content;
+                                            padding: 5px;
+                                            background-color: var(--white_color);
+                                            border-radius: 10px;
+                                            position: absolute;
+                                            list-style: none;
+                                            
+                                            .people__teacher-icon-option{
+                                                font-size: 15px;
+                                                padding: 2px;
+                                                .people__teacher-icon-option_link{
+                                                    text-decoration: none;
+                                                    color: var(--text_color);
+                                                    width: 100%;
+                                                    display: inline-block;
+                                                    
+                                                }
+                                                
+                                                
+                                                :hover{
+                                                    color: var(--main_color);
+                                                    cursor: pointer;
+                                                    opacity: 0.8;
+                                                }
+                                            }
+                                            
+                         
+                                            
+                                        }
+                                        
+                                    }
+
+                                    // hdgwd
+                                    
+
+                                }
+                            }
+
+                        }
+
+                        .people__student{
+                            padding: 20px;
+                            .people__student--list{
+                                .people__student--detail{
+                                    display: flex;
+                                    padding: 10px;
+                                    align-items: center;
+                                    margin-top: 16px;
+                                    border: 1px solid var(--main_color);
+                                    border-radius: 10px;
+                                    img{
+                                        width: 5%;
+                                        border-radius: 50%;
+                                        
+
+                                    }
+                                    .people__student--infor{
+                                        width: 85%;
+                                        color: var(--text_color);
+                                        margin-left: 30px;
+                                        h1{
+                                            font-size: 20px;
+                                        }
+                                        p{
+                                            font-size: 15px;
+                                        }
+                                        
+                                        
+
+                                    }
+                                    .people__student-icon{
+                                        
+                                        font-size: 20px;
+                                        padding-top: 10px;
+                                        color: var(--text_color);
+                                        position: relative;
+                                        // background-color: black;
+                                        :hover{
+                                            
+                                            cursor: pointer;
+                                        }
+                                        ul{
+                                            right: -10px;
+                                            top: 30px;
+                                            width: 300px;
+                                            height: fit-content;
+                                            padding: 5px;
+                                            background-color: var(--white_color);
+                                            border-radius: 10px;
+                                            position: absolute;
+                                            list-style: none;
+                                            
+                                            .people__student-icon-option{
+                                                font-size: 15px;
+                                                padding: 2px;
+                                                .people__student-icon-option_link{
+                                                    text-decoration: none;
+                                                    color: var(--text_color);
+                                                    width: 100%;
+                                                    display: inline-block;
+                                                    
+                                                }
+                                                
+                                                
+                                                :hover{
+                                                    color: var(--main_color);
+                                                    cursor: pointer;
+                                                    opacity: 0.8;
+                                                }
+                                            }
+                                            
+                         
+                                            
+                                        }
+                                        
+                                    }
+
+                                    // hdgwd
+                                    
+
+                                }
+                            }
+
+                        }
+                        
+
+                    }
+                    .setting__wrap{
+                        .setting__infor{
+                            background-color: var(--white_color);
+                            margin-top: 16px;
+                            padding: 20px;
+                            border-radius: 10px;
+
+                            .setting__infor--img{
+                                display: flex;
+                                align-items: center;
+                                
+                                img{
+                                    width: 200px;
+                                    height: 200px;
+                                    border-radius: 50%;
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-line-clamp: 2;
+                                    
+
+                                }
+                                .setting__infor--change{
+                                    margin-left: 30px;
+                                    font-size: 20px;
+                                }
+                            }
+                            .setting__infor--name{
+                                padding: 20px 10px;
+                                display: flex;
+                                align-items: center;
+                                input{
+                                    width: 19%;
+                                    height: 40px;
+                                    padding: 5px;
+                                    font-size: 15px;
+                                    border-radius: 10px;
+                                    border: 1px solid var(--main_color);
+                                    padding-left: 10px;
+                                }
+                                .btn{
+                                    margin-left: 30px;
+                                    width: 12%;
+                                }
+                            }
+
+                        }
+                        .setting__noti{
+                            width: 30%;
+                            background-color: var(--white_color);
+                            border-radius: 10px;
+                            padding: 10px;
+                            margin-top: 16px;
+                            display: flex;
+                            h1{
+                                width: 80%;
+
+                            }
+                            
+
+                        }
+                    }
+
+                    
+                    
+                    
+                    
+                    
+                    
+
+                }
+            }
+
+        }
+    }
+}
+// Đăng nhập
+.app__wrap{
+    background:url('../img/background.png');
+    background-size: cover;
+    min-height:89vh;
+    display: grid;
+    place-items: center;
+    .form_login{
+        background-color: var(--white_color);
+        border-radius: 20px;
+        width: 41.66%;
+        text-align: center;
+        align-items: center;
+        opacity: 0.9;
+        padding: 20px 0;
+        .form_login--logo{
+            width: 60%;
+        }
+        p{
+            font-size: 15px;
+            margin-top: 0;
+        }
+        
+        .form_login--content{
+            width:100%;
+            .form_login--p {
+                color: red;
+                margin:0;
+                text-align: left;
+                padding-left: 55px;
+            }
+            .form-control{
+                position: relative;
+                .form_login--input{
+                    padding-left: 10px;
+                    width: 80%;
+                    height: 35px;
+                    border: 1px solid var(--main_color);
+                    border-radius: 5px;
+                    margin-top: 5px;
+                    font-size: 15px;
+                    outline: none;
+                }
+                .error{
+                    border: 1px solid red; 
+                }
+                span{
+                    position: absolute;
+                    top: 41px;
+                    left: 10%;
+                    color: red;
+                }
+            }
+                .form-password {
+                position: relative;
+                .form_login--input{
+                    padding-left: 10px;
+                    width: 80%;
+                    height: 35px;
+                    border: 1px solid var(--main_color);
+                    border-radius: 5px;
+                    margin-top: 5px;
+                    font-size: 15px;
+                }
+                .error{
+                    border: 1px solid red; 
+                }
+                .form-password-toggle {
+                    position:absolute;
+                    top: 14px;
+                    right:12%;
+                    font-size: 16px;
+                    cursor: pointer;
+                    .form-password-toggleline {
+                        width: 2px;
+                        height: 20px;
+                        background-color: #333;
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        top: -1px;
+                        right: 8px; 
+                    }
+                }
+                
+            }
+            .form_login--forgotandsignup{
+                font-size: 15px;
+                list-style: none;
+                display: flex;
+                justify-content:space-between;
+                padding-left: 60px;
+                padding-right: 60px;
+
+                a{
+                    text-decoration: none;
+                    color:  var(--text_color);
+                }
+                .forgot{
+                    @extend a;
+                    
+                }
+                .signup{
+                    @extend a;
+                }
+            }
+        }
+        
+    }
+// sign up
+    .form_sign-up{
+        background-color: var(--white_color);
+        border-radius: 20px;
+        width: 41.66%;
+        margin: 0px 41.66%;
+        text-align: center;
+        align-items: center;
+        opacity: 0.9;
+        padding: 20px 0;
+        .form_sign-up--logo{
+            width: 60%;
+
+        }
+        p{
+            font-size: 15px;
+            margin-top: 0;
+        }
+        .form_sign-up--content{
+            width:100%;
+            a {
+                color: var(--text_color);
+                font-size: 14px;
+                text-decoration: none; 
+                margin-bottom: 8px;
+                display: block;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+            .form-control{
+                position: relative;
+                .form_login--input{
+                    padding-left: 10px;
+                    width: 80%;
+                    height: 35px;
+                    border: 1px solid var(--main_color);
+                    border-radius: 5px;
+                    margin-top: 5px;
+                    font-size: 15px;
+                    outline: none;
+                }
+                .error{
+                    border: 1px solid red; 
+                }
+                span{
+                    position: absolute;
+                    top: 41px;
+                    left: 10%;
+                    color: red;
+                }
+            }
+            .form-password {
+                position: relative;
+                .form_login--input{
+                    padding-left: 10px;
+                    width: 80%;
+                    height: 35px;
+                    border: 1px solid var(--main_color);
+                    border-radius: 5px;
+                    margin-top: 5px;
+                    font-size: 15px;
+                    outline: none;
+                }
+                .form-password-toggle {
+                    position:absolute;
+                    top: 14px;
+                    right:12%;
+                    font-size: 16px;
+                    .form-password-toggleline {
+                        width: 2px;
+                        height: 20px;
+                        background-color: #333;
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        top: -1px;
+                        right: 8px;
+                        
+                    }
+                }
+            }
+            .form_sign-up--input-ErrorMessage {
+                color: red;
+                text-align: left;
+                padding-left: 60px;
+                margin: 0;
+            }
+            .form_sign-up--input{
+                padding-left: 10px;
+                width: 80%;
+                height: 35px;
+                border: 1px solid var(--main_color);
+                border-radius: 5px;
+                margin-top: 5px;
+                font-size: 15px;
+                
+            }
+            .form_sign-up--input-EmailExists {
+                display: none;
+                color: red;
+                font-size: 10px;
+                text-align: left;
+                margin: 0 55px;
+            }
+        }
+        
+    }
+// Xác thực
+    .form__account_authentication{
+        background-color: var(--white_color);
+        border-radius: 20px;
+        width: 41.66%;
+        margin: 0px 41.66%;
+        text-align: center;
+        align-items: center;
+        opacity: 0.9;
+        .form__account_authentication--logo{
+            width: 60%;
+            margin-top: 7%;
+        }
+        p{
+            font-size: 15px;
+            margin-top: 0;
+        }
+        .form__account_authentication--p {
+            color: red;
+            margin: 0px;
+            text-align: left;
+            padding-left: 55px;
+        }
+        .form__account_authentication--content{
+            width:100%;
+            height: 130px;
+            .form__account_authentication--input{
+                width: 80%;
+                height: 35px;
+                border: 1px solid var(--main_color);
+                border-radius: 5px;
+                margin-top: 5px;
+                font-size: 15px;
+                padding-left: 10px;
+
+            }
+        }
+        
+    }
+// lấy lại mât khẩu
+    .form_reset_password{
+        background-color: var(--white_color);
+        border-radius: 20px;
+        width: 41.66%;
+        text-align: center;
+        align-items: center;
+        opacity: 0.9;
+
+        .form_reset_password--logo{
+            width: 60%;
+            margin-top: 7%;
+        }
+        p{
+            font-size: 15px;
+            margin-top: 0;
+        }
+
+        .form_reset_password--content{
+            width:100%;
+            padding-bottom: 30px;
+            .form_reset_password--p {
+                color: red;
+                margin: 0;
+                text-align: left;
+                padding-left: 55px;
+            }
+            .form_reset_password--input{
+                width: 80%;
+                height: 35px;
+                border: 1px solid var(--main_color);
+                border-radius: 5px;
+                margin-top: 5px;
+                font-size: 15px;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+// Tạo lớp mới
+.form_new_class{
+    background-color: var(--white_color);
+    border-radius: 20px;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+    margin: 3% 11%;
+    padding-top: 5%;
+    p{
+        font-size: 30px;
+        
+    }
+    
+    .form_new_class--content{
+        width:100%;
+        height: 280px;
+        .form_new_class--p {
+            color: red;
+            font-size: 15px;
+            margin:0;
+            text-align: left;
+            padding-left: 89px;
+        }
+        .form_new_class--input{
+            width: 80%;
+            height: 35px;
+            border: 1px solid var(--main_color);
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 15px;
+            padding-left: 10px;
+
+        }
+    }
+    
+}
+// Tham gia lớp
+.form_join_class{
+    background-color: var(--white_color);
+    border-radius: 20px;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+    margin: 6% 11%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    p{
+        font-size: 30px;
+        
+    }
+    
+    .form_join_class--content{
+        width:100%;
+        .form_join_class--p {
+            color: red;
+            margin:0;
+            font-size: 15px;
+            text-align: left;
+            padding-left: 89px;
+        }
+        .form_join_class--input{
+            width: 80%;
+            height: 35px;
+            border: 1px solid var(--main_color);
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 15px;
+            padding-left: 10px;
+        }
+
+    }
+    
+}
+// Chi tiết lớp
+.main-class-detail{
+    .main-class-detail__title{
+        background-color: rgb(182, 40, 163);
+        height: 100px;
+        border-radius: 10px;
+        h1{
+            line-height: 40px;
+            width: 100%;
+            font-size: 30px;
+            color: var(--white_color);
+            text-align: center;
+            padding-top: 30px;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+        
+    }
+    // tạo thông báo
+    .main-class-detail__post{
+        padding-top: 12px;
+        .main-class-detail__btn{
+            input{
+                width: 100%;
+                height: 50px;
+                border: 1px solid var(--main_color);
+                border-radius: 10px;
+                font-size: 15px;
+                text-align: center;
+                background-color: white;
+            }
+            :hover{
+                background-color: var(--gray_color);
+                cursor: pointer;
+            }
+            
+        }
+        .main-class-detail__add-member{
+            // background-color: rebeccapurple;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            input{
+                width: 60%;
+                height: 50px;
+                padding: 0 20px;
+                border: 1px solid var(--main_color);
+                border-radius: 40px;
+                font-size: 15px;
+                background-color: white;
+            }
+            .main-class-detail__add-member_btn{
+                margin-left: 30px;
+                border: none;
+                background-color: var(--white_color);
+                color: var(--text_color);
+                width: 100px;
+                height: 40px;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            :focus::placeholder {
+                opacity: 0; 
+            }
+
+        }
+        .main-class-detail__textarea{
+            width: 100%;
+            height: 200px;
+            border: 1px solid var(--main_color);
+            border-radius: 10px;
+            font-size: 15px;
+            background-color: white;
+            padding: 20px;
+            overflow: scroll;
+            
+        }
+        .main-class-detail__post--editor-toolbar-wrap{
+            // background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            
+            .main-class-detail__post--editor-toolbar{
+                font-size: 35px;
+                // background-color: rebeccapurple;
+                width: 70%;
+                padding: 8px;
+                button{
+                    background-color: transparent;
+                    border: none;
+                }
+                .main-class-detail__file{
+                    background-color: none;
+                }
+            }
+            
+            
+        }
+        .submit {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        
+
+    }
+    // Hiển thị các thông báo(Phần này ở trong  trang chi tiết lớp
+    .main-class-detail__noti--wrap{
+        display: flex;
+        padding-top: 16px;
+        .main-class-detail__noti--deadlines {
+            overflow-y: none;
+            height: 170px;
+            background-color: white;
+            border-radius: 10px;
+            margin-right: 16px;
+            padding: 1%;
+            width: 16.6667%;
+            h3{
+                
+                font-size: 20px;
+            }
+            p{
+                font-size: 13px;
+
+            }
+            .main-class-detail__noti--deadlines{
+                width: 100%;
+                height: 15%;
+                float: left;
+                button{
+                    border: none;
+                    background-color: var(--main_color);
+                    color: var(--white_color);
+                    width: 50px;
+                    height: 30px;
+                    border-radius: 5px;
+                }
+                :hover{
+                    background-color: var(--white-color);
+                    color: var(--main_color);
+                    border: 1px solid var(--main_color);
+                    cursor: pointer;
+                }
+            }
+            
+            
+            
+        }
+        
+        .main-class-detail__noti--list{
+            .main-class-detail__noti{
+                display: flex;
+                padding: 10px 10px;
+                background-color: var(--white_color);
+                border-radius: 10px;
+                width: 850px;
+                img{
+                    width: 5%;
+                    border-radius: 50%;
+                }
+                .main-class-detail__noti--content{
+                    margin-left: 20px;
+                    width: 70%;
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+                + .main-class-detail__noti{
+                    margin-top: 15px;
+                }
+            }
+            :hover{
+                background-color: var(--gray_color);
+                cursor: pointer;
+            }
+        }
+        .main-class-detail__homework--list{
+            width: 100%;
+            .main-class-detail__homework{
+                display: flex;
+                padding: 10px 10px;
+                background-color: var(--white_color);
+                border-radius: 10px;
+                .main-class-detail__homework--icon{
+                    font-size: 30px;
+                    padding: 10px;
+                }
+                
+                .main-class-detail__homework--content{
+                    margin-left: 20px;
+                    width: 75%;
+                    font-size: 15px;
+                    font-weight: 300;
+                    padding-top: 3px;
+                    p{
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        display: -webkit-box;
+                    }
+                }
+                + .main-class-detail__homework{
+                    margin-top: 15px;
+                }
+                .main-class-detail__homework--time{
+                    width: 23%;
+                    font-size: 12px;
+                    padding-top: 6px;
+
+                }
+                .main-class-detail__homework--icon_2{
+                    width: 7%;
+                    font-size: 20px;
+                    text-align: center;
+                    padding-top: 15px;
+                    :hover{
+                        // background-color: aqua;
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+                }
+            }
+            :hover{
+                background-color: var(--main_color);
+                cursor: pointer;
+            }
+        }
+        
+ 
+    }
+    // Giảng viên xem bài tập
+    .see-homework__wrap{
+        background-color: var(--white_color);
+        height: max-content;
+        margin-top: 16px;
+        padding: 30px;
+        .see-homework__detail--list{
+            padding: 30px 0px;
+            .see-homework__detail{
+                display: flex;
+                padding: 10px 10px;
+                background-color: var(--white_color);
+                border-radius: 10px;
+                margin-top: 16px;
+                
+                .see-homework__detail--icon{
+                    font-size: 30px;
+                    width: 5%;
+                    padding: 10px;
+                }
+                .see-homework__detail--content{
+                    margin-left: 20px;
+                    width: 80%;
+                    font-size: 15px;
+                    font-weight: 300;
+                    p{
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        display: -webkit-box;
+                    }
+                }
+                
+                
+                .see-homework__detail--time{
+                    text-align: center;
+                    font-size: 12px;
+                    width: 18%;
+                    font-size: 12px;
+                    padding-top: 6px;
+                }  
+                
+                .see-homework__detail--icon_2{
+                    font-size: 15px;
+                    padding-top: 10px;
+                    color: var(--text_color);
+                    position: relative;
+                    :hover{
+                        
+                        cursor: pointer;
+                    }
+                    ul{
+                        
+                        
+                        right: -10px;
+                        top: 30px;
+                        width: 170px;
+                        height: fit-content;
+                        padding: 5px;
+                        background-color: var(--white_color);
+                        border-radius: 10px;
+                        position: absolute;
+                        list-style: none;
+                        
+                        .see-homework__detail-icon-option{
+                            font-size: 15px;
+                            padding: 2px;
+                            .see-homework__detail-icon-option_link{
+                                text-decoration: none;
+                                color: var(--text_color);
+                                width: 100%;
+                                display: inline-block;
+                                
+                            }
+                            
+                            
+                            :hover{
+                                color: var(--main_color);
+                                cursor: pointer;
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+           
+                }
+                
+                
+                
+            }
+            
+            
+
+        }
+        
+
+    }
+    
+    
+    
+}
+
+
